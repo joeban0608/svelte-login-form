@@ -7,7 +7,7 @@
 	<!-- Form fields go here -->
 	<div class="flex gap-4">
 		<label for="email">Email</label>
-		<input name="email" />
+		<input name="email" type="email" />
 	</div>
 	<div>
 		<button class="btn bg-primary inline-block w-auto" type="submit">Submit</button>
