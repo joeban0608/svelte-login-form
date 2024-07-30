@@ -5,10 +5,7 @@
 	// export let data: LayoutData;
 	import { page } from '$app/stores';
 	$: sessionid = $page.data.sessionid;
-	$: console.log('sessionid', sessionid);
-	function deleteCookie(name: string) {
-		document.cookie = `${name}=; Max-Age=-99999999;`;
-	}
+	$: userEmail = $page.data?.userInfo?.email ?? '';
 </script>
 
 <header class="w-full">
@@ -23,6 +20,7 @@
 				</a>
 			{/if}
 			{#if sessionid}
+				<h3 class="font-bold">{userEmail}</h3>
 				<div class="dropdown dropdown-end">
 					<div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
 						<div class="w-10 rounded-full">

@@ -7,14 +7,16 @@ import {
 export const load = (async ({ cookies }) => {
 	console.log('cookies', cookies);
 	const sessionid = cookies.get('sessionid');
+	const cookieUserInfo = cookies.get('userInfo') as string | undefined;
+	const userInfo = cookieUserInfo ? JSON.parse(cookieUserInfo) : null;
 	console.log('sessionid', sessionid);
-	return { sessionid };
+	return { sessionid, userInfo };
 }) satisfies PageServerLoad;
 
 export const actions: Actions = {
-	logout: async ({ cookies, locals }) => {
-		console.log('locals', locals);
+	logout: async ({ cookies }) => {
 		cookies.delete('sessionid', { path: '/' });
+		cookies.delete('email', { path: '/' });
 		throw redirect(302, '/login');
 		// return {
 		// 	success: true
