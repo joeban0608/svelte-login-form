@@ -5,11 +5,9 @@ import {
 	redirect
 } from '@sveltejs/kit';
 export const load = (async ({ cookies }) => {
-	console.log('cookies', cookies);
 	const sessionid = cookies.get('sessionid');
 	const cookieUserInfo = cookies.get('userInfo') as string | undefined;
 	const userInfo = cookieUserInfo ? JSON.parse(cookieUserInfo) : null;
-	console.log('sessionid', sessionid);
 	return { sessionid, userInfo };
 }) satisfies PageServerLoad;
 

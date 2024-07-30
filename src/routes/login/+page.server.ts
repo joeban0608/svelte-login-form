@@ -15,12 +15,12 @@ export const actions: Actions = {
 		// TODO log the user in
 		const formData = await request.formData();
 		const email = formData.get('email') as string;
-		const password = formData.get('password');
+		// const password = formData.get('password');
 		const useInfo = {
 			email: email
 		};
 
-		console.log('password', password);
+		// console.log('password', password);
 		cookies.set('sessionid', uuidv4(), { path: '/' });
 		cookies.set('userInfo', JSON.stringify(useInfo), { path: '/' });
 		// Process the form data and perform actions
