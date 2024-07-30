@@ -11,7 +11,7 @@ export const load = (async () => {
 }) satisfies PageServerLoad;
 
 export const actions: Actions = {
-	default: async ({ cookies, request }) => {
+	login: async ({ cookies, request }) => {
 		// TODO log the user in
 		const formData = await request.formData();
 		const email = formData.get('email');

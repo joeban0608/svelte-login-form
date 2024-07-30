@@ -37,7 +37,7 @@
 					>
 						<li><a href="/#setting">Settings</a></li>
 						<li class="w-full bg-blue inline-block">
-							<form method="POST" class="w-full bg-red inline-block">
+							<form method="POST" action="?/logout" class="w-full bg-red inline-block">
 								<button class="w-full text-start" type="submit"> Logout </button>
 							</form>
 						</li>

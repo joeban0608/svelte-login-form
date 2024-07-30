@@ -12,7 +12,7 @@ export const load = (async ({ cookies }) => {
 }) satisfies PageServerLoad;
 
 export const actions: Actions = {
-	default: async ({ cookies, locals }) => {
+	logout: async ({ cookies, locals }) => {
 		console.log('locals', locals);
 		cookies.delete('sessionid', { path: '/' });
 		throw redirect(302, '/login');

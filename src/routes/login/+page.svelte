@@ -3,7 +3,7 @@
 </script>
 
 <h1 class="text-3xl font-bold underline">Login Form</h1>
-<form method="POST" class="flex flex-col gap-4 p-4 border">
+<form method="POST" action="?/login" class="flex flex-col gap-4 p-4 border">
 	<!-- Form fields go here -->
 	<div class="flex gap-4">
 		<label for="email">Email</label>
